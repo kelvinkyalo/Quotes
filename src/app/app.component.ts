@@ -9,8 +9,7 @@ import { Quote } from './quote';
 export class AppComponent {
   quotes :Quote []= [
   
-  //  new Quote  (6,"If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.","Author-James cameron","Cameron",new Date(2020,3,14)),
-  //  new Quote (7,"Life is what happens when you are busy making other plans.","Author-John Lennon","Lennon",new Date(2020,3,14))
+   //  new Quote (7,"Life is what happens when you are busy making other plans.","Author-John Lennon","Lennon",new Date(2020,3,14))
   // 
   {id:1,name:"The greatest glory in living lies not in never falling, but in rising every time we fall.",quoteby: "Author-Nelson Mandela",uploadby: "Nelson",completeDate: new Date(2020,3,14)},
   {id:2,name:"The way to get started is to quit talking and begin doing.",quoteby: "Author -Walt Disney",uploadby: "Walt",completeDate:new Date(2020,3,14)},
