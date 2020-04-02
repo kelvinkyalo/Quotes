@@ -18,6 +18,9 @@ export class QuoteComponent implements OnInit {
     new Quote(7,"Life is what happens when you are busy making other plans.", "Author-John Lennon", "Lennon",new Date(2020,3,14))
   ];
 
+  toggleDetails(index){
+    this.quotes[index].showAuthor = !this.quotes[index].showAuthor;
+  }
   addNewQuote(quote){
     let quoteLength = this.quotes.length;
     quote.id = quoteLength+1;
@@ -30,9 +33,9 @@ export class QuoteComponent implements OnInit {
       this.quotes.splice(index, 1);
     }
   } 
-  toggleDetails(index){
-    this.quotes[index].showAuthor = !this.quotes[index].showAuthor;
-  }
+  // toggleDetails(index){
+  //   this.quotes[index].showAuthor = !this.quotes[index].showAuthor;
+  // }
 
   constructor() { }
 
