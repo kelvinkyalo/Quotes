@@ -8,8 +8,6 @@ import { Quote } from './quote';
 })
 export class AppComponent {
   quotes :Quote []= [
-  
-   // 
   {id:1,name:"The greatest glory in living lies not in never falling, but in rising every time we fall.",quoteby: "Author-Nelson Mandela",uploadby: "Nelson",completeDate: new Date(2020,3,14)},
   {id:2,name:"The way to get started is to quit talking and begin doing.",quoteby: "Author -Walt Disney",uploadby: "Walt",completeDate:new Date(2020,3,14)},
   {id:3,name:"Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.",quoteby: "Author-Steve Jobs", uploadby:"Jobs",completeDate:new Date(2020,3,14)},
