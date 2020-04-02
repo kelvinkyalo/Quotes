@@ -4,7 +4,7 @@
     <form (ngSubmit)='submiQuote()' #quoteForm='ngForm'>
 
         <label for="name">Quote</label>
-        <input type="text" required class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel' required> Display {{newQuote.name}}
+        <input type="text" required class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel' required>
         <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
             <p>Name is required</p>
         </div>
@@ -18,7 +18,22 @@
 
         </div>
         <div class="form-group">
-            <label for="completeDate">upload</label>
+            <label for="uploader">uploded by;</label>
+            <textarea class="form-control" name="uploadby" id="uploadby" rows="4" [(ngModel)]="newQuote.uploadby" #uploadby="ngModel" required></textarea>
+
+            <div [(hidden)]="uploadby.valid || uploadby.pristine" class="alert alert-danger">
+                <p>uploader is required</p>
+            </div>
+        </div>
+
+
+        <!-- <label for="uploader">uploader</label>
+        <textarea type="text" class="form-control" id="uploader" [(ngModel)]="newQuote.uploader" name="uploader" #quoteby='ngModel' required></textarea>
+        <div [hidden]="uploader.valid || uploader.pristine" class="alert alert-danger">
+            <p>uploader is required</p>
+        </div> -->
+        <div class="form-group">
+            <label for="completeDate">days since upload</label>
             <input type='date' id="completeDate" [(ngModel)]="newQuote.completeDate" name="completeDate" #completeDate="ngModel" required>
             <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
                 <p>date is required</p>

@@ -6,12 +6,14 @@
         <div class="col-md-6">
             <div *ngFor='let quote of quotes;let i = index'>
                 <div>
-                    <h6>{{quote.name}} {{quote.completeDate|date}}days since upload.</h6>
-                    <p>{{quote.quoteby}}</p>
+                    <h6>quote:{{quote.name}} {{quote.completeDate|date}}days since upload.</h6>
+                    <p>quoteby:{{quote.quoteby}}</p>
                     <p>Uploader:{{quote.uploadby}}</p>
 
-                    <!-- <button ng-click="count = count + 1" ng-init="count=0">upvote</button>
-                    <p>{{count}}</p> -->
+                    <button ng-click="count = count + 1" ng-init="count=0">upvote</button>
+                    <p>{{count}}</p>
+                    <button ng-click="count = count + 1" ng-init="count=0">downvote</button>
+                    <p>{{count}}</p>
                     <!-- <br>
                     <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
                 </div> -->
