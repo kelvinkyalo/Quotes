@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { QuoteComponent } from './quote/quote.component';
 import { QuoteDetailComponent } from './quote-detail/quote-detail.component';
 import { UploaderComponent } from './uploader/uploader.component';
-import { QuoteFormComponent } from './quote-form/quote-form.component';
+import { QuoteFormComponent } from "./quote-form/QuoteFormComponent";
 
 
 @NgModule({
@@ -25,6 +25,6 @@ import { QuoteFormComponent } from './quote-form/quote-form.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
-})
+//   bootstrap: [AppComponent]
+// })
 export class AppModule { }
