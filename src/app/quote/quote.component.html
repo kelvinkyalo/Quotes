@@ -14,10 +14,6 @@
                     <p>{{count}}</p>
                     <button ng-click="count = count + 1" ng-init="count=0">downvote</button>
                     <p>{{count}}</p>
-                    <!-- <br>
-                    <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
-                </div> -->
-
                     <div *ngIf='quote.showAuthor'>
                         <app-quote-detail [quote]='quote' (isDone='completeQuote($event,i)'></app-quote-detail>
                     </div>
