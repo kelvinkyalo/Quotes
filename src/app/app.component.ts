@@ -8,7 +8,6 @@ import { Quote } from './quote';
 })
 export class AppComponent {
   quotes :Quote []= [
-  //  new Quote  (4,"If life were predictable it would cease to be life, and be without flavor.","Author-Elenor Roosevelt","Roosevelt",new Date(2020,3,14)),
   //  new Quote  (5,"If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough.","Author -Ophrah Winfrey","Winfrey",new Date(2020,3,14)),
   //  new Quote  (6,"If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.","Author-James cameron","Cameron",new Date(2020,3,14)),
   //  new Quote (7,"Life is what happens when you are busy making other plans.","Author-John Lennon","Lennon",new Date(2020,3,14))
