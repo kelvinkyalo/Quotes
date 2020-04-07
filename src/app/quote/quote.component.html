@@ -1,26 +1,35 @@
 <div class="container">
     <h1>Quotes</h1>
     <hr>
-
     <div class="row">
         <div class="col-md-6">
             <div *ngFor='let quote of quotes;let i = index'>
-                <div>
-                    <h6>quote:{{quote.name}} {{quote.completeDate|date}}days since upload.</h6>
-                    <p>quoteby:{{quote.quoteby}}</p>
-                    <p>Uploader:{{quote.uploadby}}</p>
+                <h6>quote:{{quote.name}} {{quote.completeDate|date}}days since upload.</h6>
 
-                    <button ng-click="count = count + 1" ng-init="count=0">upvote</button>
-                    <p>{{count}}</p>
-                    <button ng-click="count = count + 1" ng-init="count=0">downvote</button>
-                    <p>{{count}}</p>
-                    <div *ngIf='quote.showAuthor'>
-                        <app-quote-detail [quote]='quote' (isDone='completeQuote($event,i)'></app-quote-detail>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <app-quote-form (addQuote)="addNewQuote($event)"> </app-quote-form>
+                <li appStrikethrough>{{quote.name}}</li>
+                <h6 id={{i}} appStrikethrough>{{quote.name}} days since upload {{quote.completeDate|date}}</h6>
+                <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+                <p>quoteby:{{quote.quoteby}}</p>
+                <p>Uploader:{{quote.uploadby}}</p>
+                <li appStrikethrough>{{quote.name}} uploaded on {{quote.completeDate|date}}</li>
+
+                <app-quote-detail *ngIf='quote.showAuthor' [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
             </div>
         </div>
+        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
+
+</div>
+<!-- <li appHighlight *ngIf='highlighter(i) && quote.upvote > 0'>{{quote.name}}</li>
+                <li *ngIf='!highlighter(i) ||  quote.upvote === 0'>{{quote.name}}</li>
+             -->
+
+<!-- <div>
+                <p>upvote:{{quote.upvote}}</p>
+                <button type="button" class="btn btn-outline-success" (click)="upvote()">upvote</button>
+             </div>
+             <div>
+
+                <p>downvote:{{quote.downvote}}</p>
+                <button type="button" class="btn btn-outline-success" (click)="downvote()">downvote</button>
+             </div> -->

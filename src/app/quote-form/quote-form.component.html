@@ -1,40 +1,43 @@
 <div class="container-fluid">
     <h2 class="text-center">New Quote</h2>
     <hr>
-    <form (ngSubmit)='submiQuote()' #quoteForm='ngForm'>
+    <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
 
-        <label for="name">Quote</label>
-        <input type="text" required class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel' required>
-        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-            <p>Name is required</p>
-        </div>
         <div class="form-group">
+            <label for="name">Quote</label>
+            <input type="text" required class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel' required>
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                <p>Name is required</p>
+            </div>
+            Display {{newQuote.name}}
+            <div class="form-group">
 
-            <label for="quoteby">Author</label>
-            <textarea class="form-control" id="quoteby" rows="4" [(ngModel)]="newQuote.quoteby" name="quoteby" #quoteby="ngModel" required></textarea>
-            <div [hidden]="quoteby.valid || quoteby.pristine" class="alert alert-danger">
-                <p>Author is required</p>
+                <label for="quoteby">Author</label>
+                <input type="text" class="form-control" id="quoteby" rows="4" [(ngModel)]="newQuote.quoteby" name="quoteby" #quoteby='ngModel' required>
+                <div [hidden]="quoteby.valid || quoteby.pristine">
+                    <p>Author is required</p>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="uploader">uploded by;</label>
+                <textarea class="form-control" name="uploadby" id="uploadby" rows="4" [(ngModel)]="newQuote.uploadby" name="uploadby" #uploadby="ngModel" required></textarea>
+
+                <!-- <div [(hidden)]="uploadby.valid || uploadby.pristine">
+                    <p>uploader is required</p>
+                </div> -->
             </div>
 
-        </div>
-        <div class="form-group">
-            <label for="uploader">uploded by;</label>
-            <textarea class="form-control" name="uploadby" id="uploadby" rows="4" [(ngModel)]="newQuote.uploadby" #uploadby="ngModel" required></textarea>
+            <div class="form-group">
+                <label for="complete">days since upload</label>
+                <input type='date' id="complete" [(ngModel)]="newQuote.completeDate" name="completeDate" #completeDate="ngModel" required>
+                <div [hidden]="completeDate.valid || completeDate.pristine">
+                    <p>date is required</p>
+                </div>
 
-            <div [(hidden)]="uploadby.valid || uploadby.pristine" class="alert alert-danger">
-                <p>uploader is required</p>
             </div>
+            <button type="submit" class="btn btn-success">Add Quote</button>
         </div>
-        <div class="form-group">
-            <label for="completeDate">days since upload</label>
-            <input type='date' id="completeDate" [(ngModel)]="newQuote.completeDate" name="completeDate" #completeDate="ngModel" required>
-            <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
-                <p>date is required</p>
-            </div>
-
-        </div>
-        <button type="submit" class="btn btn-success">Add Quote</button>
-
     </form>
 
 </div>
