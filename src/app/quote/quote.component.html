@@ -4,32 +4,22 @@
     <div class="row">
         <div class="col-md-6">
             <div *ngFor='let quote of quotes;let i = index'>
-                <h6>quote:{{quote.name}} {{quote.completeDate|date}}days since upload.</h6>
 
-                <li appStrikethrough>{{quote.name}}</li>
-                <h6 id={{i}} appStrikethrough>{{quote.name}} days since upload {{quote.completeDate|date}}</h6>
-                <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+                <h6 id={{i}} appStrikethrough>{{quote.name}} uploaded on {{quote.completeDate|date}}</h6>
+
                 <p>quoteby:{{quote.quoteby}}</p>
                 <p>Uploader:{{quote.uploadby}}</p>
-                <li appStrikethrough>{{quote.name}} uploaded on {{quote.completeDate|date}}</li>
 
-                <app-quote-detail *ngIf='quote.showAuthor' [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
+
+                <li appHighlight *ngIf='highlighter(i) && quote.upvote > 0'></li>
+                <li *ngIf='!highlighter(i) ||  quote.upvote === 0'></li>
+                <button (click)='toggleDetails(i)' class="btn btn-danger">View more..</button>
+
+                <div *ngIf='quote.showAuthor'>
+                    <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
+                </div>
             </div>
+            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
         </div>
-        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
-
 </div>
-<!-- <li appHighlight *ngIf='highlighter(i) && quote.upvote > 0'>{{quote.name}}</li>
-                <li *ngIf='!highlighter(i) ||  quote.upvote === 0'>{{quote.name}}</li>
-             -->
-
-<!-- <div>
-                <p>upvote:{{quote.upvote}}</p>
-                <button type="button" class="btn btn-outline-success" (click)="upvote()">upvote</button>
-             </div>
-             <div>
-
-                <p>downvote:{{quote.downvote}}</p>
-                <button type="button" class="btn btn-outline-success" (click)="downvote()">downvote</button>
-             </div> -->

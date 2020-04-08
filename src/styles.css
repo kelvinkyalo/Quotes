@@ -1,3 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
-
-@import "~bootstrap/dist/css/bootstrap.css"
+            /* You can add global styles to this file, and also import other style files */
+            
+            @import "~bootstrap/dist/css/bootstrap.css";
+            .fa {
+                font-size: 50px;
+                cursor: pointer;
+                user-select: none;
+            }
+            
+            .fa:hover {
+                color: darkblue;
+            }
