@@ -6,14 +6,14 @@
     <div class="row">
         <div class="col">
             <p>Up votes :{{quote.upvote}}</p>
-            <i class="fa fa-thumbs-up" (click)="upvote()">Upvote</i>
+            <i type="button" class="btn btn-outline-warning" (click)="upvote()">Upvote</i>
         </div>
 
         <div class="col">
             <p>Down votes :{{quote.downvote}}</p>
-            <i class="fa-thumbs-down" (click)="downvote()">Downvote</i><br>
+            <i type="button" class="btn btn-outline-danger" (click)="downvote()">Downvote</i><br>
         </div>
 
-        <button (click)='quoteDelete(true)' class="btn btn-outline-success">Delete</button>
+        <button (click)='quoteDelete(true)' class="btn btn-outline-primary">Delete</button>
     </div>
 </div>

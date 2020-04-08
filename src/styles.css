@@ -1,12 +1,19 @@
-            /* You can add global styles to this file, and also import other style files */
-            
-            @import "~bootstrap/dist/css/bootstrap.css";
-            .fa {
-                font-size: 50px;
-                cursor: pointer;
-                user-select: none;
-            }
-            
-            .fa:hover {
-                color: darkblue;
-            }
+                        /* You can add global styles to this file, and also import other style files */
+                        
+                        @import "~bootstrap/dist/css/bootstrap.css";
+                        .fa {
+                            font-size: 50px;
+                            cursor: pointer;
+                            user-select: none;
+                        }
+                        
+                        .fa:hover {
+                            color: darkblue;
+                        }
+                        
+                        body {
+                            background-image: url(../image/689063958d71f1c7da4397af67fce4ad.jpg);
+                            color: rgb(9, 248, 216);
+                            /* background-repeat: no-repeat; */
+                            background-size: contain;
+                        }
