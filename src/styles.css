@@ -1,19 +1,59 @@
-                        /* You can add global styles to this file, and also import other style files */
-                        
-                        @import "~bootstrap/dist/css/bootstrap.css";
-                        .fa {
-                            font-size: 50px;
-                            cursor: pointer;
-                            user-select: none;
-                        }
-                        
-                        .fa:hover {
-                            color: darkblue;
-                        }
-                        
-                        body {
-                            background-image: url(../image/689063958d71f1c7da4397af67fce4ad.jpg);
-                            color: rgb(9, 248, 216);
-                            /* background-repeat: no-repeat; */
-                            background-size: contain;
-                        }
+            /* You can add global styles to this file, and also import other style files */
+            
+            @import "~bootstrap/dist/css/bootstrap.css";
+            .fa {
+                font-size: 50px;
+                cursor: pointer;
+                user-select: none;
+            }
+            
+            .fa:hover {
+                color: darkblue;
+            }
+            
+            #quotesection {
+                background-image: url(../image/689063958d71f1c7da4397af67fce4ad1.jpg);
+                background-repeat: repeat;
+                text-align: center;
+                margin: 0px;
+            }
+            
+            #addquotesection {
+                background-image: url(../image/689063958d71f1c7da4397af67fce4ad.png);
+                background-repeat: repeat;
+                background-size: inherit;
+                margin: 0px;
+                text-align: left;
+            }
+            
+            #name {
+                border: 2px solid gold;
+                background: transparent;
+                color: white;
+            }
+            
+            #quoteby {
+                border: 2px solid gold;
+                background: transparent;
+                color: white;
+            }
+            
+            #uploadby {
+                border: 2px solid gold;
+                background: transparent;
+                color: white
+            }
+            
+            #complete {
+                border: 2px solid gold;
+                background: transparent;
+                color: white;
+            }
+            
+            body {
+                color: gold;
+                font-weight: 600;
+                font-family: 'Courier New', Courier, monospace;
+                font-style: italic;
+                font-size: 20px;
+            }

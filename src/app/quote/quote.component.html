@@ -1,25 +1,27 @@
-<div class="container">
-    <h1>Quotes</h1>
-    <hr>
-    <div class="row">
-        <div class="col-md-6">
-            <div *ngFor='let quote of quotes;let i = index'>
+<div id="quotesection">
+    <div class="container">
+        <h1>Quotes</h1>
+        <hr>
+        <!-- <div class="row">
+            <div class="col-md-6"> -->
+        <div *ngFor='let quote of quotes;let i = index'>
 
-                <h6 id={{i}} appStrikethrough>{{quote.name}} uploaded on {{quote.completeDate|date}}</h6>
+            <h6 id={{i}} appStrikethrough>{{quote.name}} uploaded on {{quote.completeDate|date}}</h6>
 
-                <p>quoteby:{{quote.quoteby}}</p>
-                <p>Uploader:{{quote.uploadby}}</p>
+            <p>quoteby:{{quote.quoteby}}</p>
+            <p>Uploader:{{quote.uploadby}}</p>
 
 
-                <li appHighlight *ngIf='highlighter(i) && quote.upvote > 0'></li>
-                <li *ngIf='!highlighter(i) ||  quote.upvote === 0'></li>
-                <button (click)='toggleDetails(i)' class="btn btn-danger">View more..</button>
+            <li appHighlight *ngIf='highlighter(i) && quote.upvote > 0'></li>
+            <li *ngIf='!highlighter(i) ||  quote.upvote === 0'></li>
+            <button (click)='toggleDetails(i)' class="btn btn-danger">View more..</button>
 
-                <div *ngIf='quote.showAuthor'>
-                    <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
-                </div>
+            <div *ngIf='quote.showAuthor'>
+                <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
             </div>
-            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
         </div>
     </div>
+</div>
+<div id="addquotesection">
+    <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
 </div>
